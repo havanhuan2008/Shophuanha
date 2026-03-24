@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script defer src="assets/js/api.js"></script>
+  <script defer src="assets/js/layout.js"></script>
+  <script defer src="assets/js/index.js"></script>
+</head>
+<body data-page="trang-chu">
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-line"></div>
+      <div class="hero-badge"><i class="fa-solid fa-bolt"></i> Shop đã cải tiến theo tab riêng + menu trái đẹp</div>
+      <h1 class="hero-title">Chào mừng đến với <span>Thanh Shop Huấn Hà</span><br>Hàng cao cấp hiển thị trước · Miễn phí ở dưới cùng</h1>
+      <p class="hero-text">Giao diện giữ phong cách hiệu ứng hiện đại, menu 3 gạch mở từ trái qua phải, có các tab riêng cho đăng nhập, đăng ký, đơn hàng đã mua, lịch sử nạp tiền, hồ sơ, nạp bank, nạp thẻ và admin quản trị.</p>
+      <div class="stats">
+        <div class="stat-card"><div class="stat-ic"><i class="fa-solid fa-box-open"></i></div><div><div class="stat-value" id="statProducts">0</div><div class="stat-label">Tổng sản phẩm</div></div></div>
+        <div class="stat-card"><div class="stat-ic"><i class="fa-solid fa-gem"></i></div><div><div class="stat-value" id="statPremium">0</div><div class="stat-label">Hàng cao cấp</div></div></div>
+        <div class="stat-card"><div class="stat-ic"><i class="fa-solid fa-gift"></i></div><div><div class="stat-value" id="statFree">0</div><div class="stat-label">Miễn phí</div></div></div>
+        <div class="stat-card"><div class="stat-ic"><i class="fa-solid fa-wallet"></i></div><div><div class="stat-value" id="statBalance">0đ</div><div class="stat-label">Số dư hiện tại</div></div></div>
+      </div>
+    </section>
+
+    <div class="section-label" id="premium"><div class="section-line"></div><div class="section-title-small"><i class="fa-solid fa-crown"></i> Hàng cao cấp</div><div class="section-line r"></div></div>
+    <section class="cards" id="premiumProducts"></section>
+
+    <div class="section-label" id="free"><div class="section-line"></div><div class="section-title-small"><i class="fa-solid fa-gift"></i> Đơn miễn phí đặt ở dưới cùng</div><div class="section-line r"></div></div>
+    <section class="cards" id="freeProducts"></section>
+  </div>
+</body>
+</html>

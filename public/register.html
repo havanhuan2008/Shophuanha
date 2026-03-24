@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <link rel="stylesheet" href="assets/css/auth.css">
+  <script defer src="assets/js/api.js"></script>
+  <script defer src="assets/js/layout.js"></script>
+  <script defer src="assets/js/auth.js"></script>
+</head>
+<body data-page="dang-ky">
+  <div class="shell auth-wrap">
+    <section class="auth-card">
+      <div class="panel-line"></div>
+      <div class="section-badge"><i class="fa-solid fa-user-plus"></i> Đăng ký</div>
+      <h1 class="hero-title">Tạo <span>tài khoản mới</span></h1>
+      <p class="section-text">Form đăng ký được tách thành tab HTML riêng, đồng bộ với phần đăng nhập và hồ sơ người dùng.</p>
+      <form id="registerForm" class="mt-24">
+        <div class="form-grid">
+          <div class="field"><label>Họ và tên</label><input type="text" name="name" required></div>
+          <div class="field"><label>Email</label><input type="email" name="email" required></div>
+          <div class="field"><label>Mật khẩu</label><input type="password" name="password" required></div>
+        </div>
+        <div class="mt-24"><button class="btn" type="submit"><i class="fa-solid fa-user-check"></i> Tạo tài khoản</button></div>
+      </form>
+      <div class="auth-switch">Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a></div>
+    </section>
+  </div>
+</body>
+</html>

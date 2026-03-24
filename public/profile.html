@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script defer src="assets/js/api.js"></script>
+  <script defer src="assets/js/layout.js"></script>
+  <script defer src="assets/js/profile.js"></script>
+</head>
+<body data-page="ho-so">
+  <div class="shell">
+    <section class="profile-panel">
+      <div class="panel-line"></div>
+      <div class="section-badge"><i class="fa-solid fa-user-gear"></i> Hồ sơ</div>
+      <h1 class="hero-title">Chỉnh sửa <span>hồ sơ</span> · đổi mật khẩu</h1>
+      <p class="section-text">Toàn bộ chức năng hồ sơ được đặt trong tab riêng, đúng với yêu cầu menu 3 gạch có mục Hồ sơ.</p>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab-btn="profile">Chỉnh sửa hồ sơ</button>
+        <button class="tab-btn" data-tab-btn="password">Đổi mật khẩu</button>
+      </div>
+      <div class="tab-panel active" data-tab-panel="profile">
+        <form id="profileForm" class="mt-24">
+          <div class="form-grid">
+            <div class="field"><label>Họ và tên</label><input type="text" id="profileName" name="name" required></div>
+            <div class="field"><label>Email</label><input type="email" id="profileEmail" disabled></div>
+            <div class="field"><label>Số điện thoại</label><input type="text" id="profilePhone" name="phone"></div>
+            <div class="field"><label>Telegram username</label><input type="text" id="profileTelegram" name="telegram" placeholder="@username"></div>
+          </div>
+          <div class="mt-24"><button class="btn" type="submit"><i class="fa-solid fa-floppy-disk"></i> Lưu hồ sơ</button></div>
+        </form>
+      </div>
+      <div class="tab-panel" data-tab-panel="password">
+        <form id="passwordForm" class="mt-24">
+          <div class="form-grid">
+            <div class="field"><label>Mật khẩu hiện tại</label><input type="password" name="currentPassword" required></div>
+            <div class="field"><label>Mật khẩu mới</label><input type="password" name="newPassword" required></div>
+          </div>
+          <div class="mt-24"><button class="btn" type="submit"><i class="fa-solid fa-key"></i> Đổi mật khẩu</button></div>
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

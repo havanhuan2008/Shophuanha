@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script defer src="assets/js/api.js"></script>
+  <script defer src="assets/js/layout.js"></script>
+  <script defer src="assets/js/admin.js"></script>
+</head>
+<body data-page="admin">
+  <div class="shell">
+    <section class="admin-panel">
+      <div class="panel-line"></div>
+      <div class="section-badge"><i class="fa-solid fa-shield-halved"></i> admin.html</div>
+      <h1 class="hero-title">Quản lý <span>toàn bộ người dùng</span>, sản phẩm, đơn và nạp tiền</h1>
+      <p class="section-text">Trang admin có các tab riêng cho dashboard, người dùng, sản phẩm, đơn hàng, giao key và duyệt nạp tiền. Khi sản phẩm hết hàng, phía người dùng sẽ không thể mua.</p>
+      <div class="mini-card-grid">
+        <div class="mini-card"><div class="muted">Người dùng</div><strong id="dashUsers">0</strong></div>
+        <div class="mini-card"><div class="muted">Sản phẩm</div><strong id="dashProducts">0</strong></div>
+        <div class="mini-card"><div class="muted">Đơn hàng</div><strong id="dashOrders">0</strong></div>
+        <div class="mini-card"><div class="muted">Doanh thu</div><strong id="dashRevenue">0đ</strong></div>
+      </div>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab-btn="products">Sản phẩm</button>
+        <button class="tab-btn" data-tab-btn="orders">Đơn hàng</button>
+        <button class="tab-btn" data-tab-btn="topups">Nạp tiền</button>
+        <button class="tab-btn" data-tab-btn="users">Người dùng</button>
+      </div>
+      <div class="tab-panel active" data-tab-panel="products">
+        <div class="two-col mt-24 admin-grid">
+          <div class="panel product-editor" style="margin-top:0;padding:22px;">
+            <div class="section-badge"><i class="fa-solid fa-pen-to-square"></i> Thêm / sửa sản phẩm</div>
+            <form id="productForm" class="mt-18">
+              <input type="hidden" id="productId" name="id">
+              <div class="form-grid">
+                <div class="field"><label>Tên sản phẩm</label><input type="text" id="productTitle" name="title" required></div>
+                <div class="field"><label>Danh mục</label><select id="productCategory" name="category"><option value="premium">Hàng cao cấp</option><option value="free">Miễn phí</option></select></div>
+                <div class="field"><label>Ảnh sản phẩm (URL)</label><input type="text" id="productImage" name="image" required></div>
+                <div class="field"><label>Số lượng tồn kho</label><input type="number" id="productStock" name="stock" min="0" required></div>
+                <div class="field"><label>Link miễn phí</label><input type="text" id="productFreeLink" name="freeLink"></div>
+                <div class="field"><label>Hiển thị</label><select id="productActive" name="active"><option value="true">Đang bật</option><option value="false">Ẩn</option></select></div>
+              </div>
+              <div class="field mt-18"><label>Mô tả</label><textarea id="productDescription" name="description" required></textarea></div>
+              <div class="field mt-18"><label>Loại key theo ngày (mỗi dòng: Tên|Số ngày|Giá)</label><textarea id="productPlans" name="plans" placeholder="Key 1 ngày|1|19000
+Key 7 ngày|7|79000"></textarea></div>
+              <div class="mt-24"><button class="btn" type="submit"><i class="fa-solid fa-floppy-disk"></i> Lưu sản phẩm</button></div>
+            </form>
+          </div>
+          <div class="panel" style="margin-top:0;padding:22px;">
+            <div class="section-badge"><i class="fa-solid fa-info-circle"></i> Hướng dẫn nhanh</div>
+            <div class="notice mt-18">Khi thêm hàng cao cấp, bạn có thể tạo nhiều loại key theo ngày. Ví dụ:<br><br><code>Key 1 ngày|1|19000</code><br><code>Key 7 ngày|7|79000</code><br><code>Key 30 ngày|30|199000</code></div>
+            <div class="notice mt-18">Khi đơn hàng phát sinh, bot Telegram sẽ báo admin. Admin có thể giao key bằng lệnh Telegram <code>/deliver ORDER_ID KEY-DATA</code> hoặc bấm nút giao key trực tiếp ở tab Đơn hàng.</div>
+          </div>
+        </div>
+        <div class="table-wrap mt-24">
+          <table>
+            <thead><tr><th>Tên</th><th>Danh mục</th><th>Tồn kho</th><th>Loại key</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+            <tbody id="productsBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-panel" data-tab-panel="orders">
+        <div class="table-wrap mt-24">
+          <table>
+            <thead><tr><th>Mã đơn</th><th>Người mua</th><th>Sản phẩm</th><th>Gói</th><th>Giá</th><th>Trạng thái</th><th>Giao key</th></tr></thead>
+            <tbody id="ordersAdminBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-panel" data-tab-panel="topups">
+        <div class="table-wrap mt-24">
+          <table>
+            <thead><tr><th>Mã GD</th><th>Loại</th><th>User ID</th><th>Số tiền</th><th>Trạng thái</th><th>Thời gian</th><th>Thao tác</th></tr></thead>
+            <tbody id="topupsAdminBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-panel" data-tab-panel="users">
+        <div class="table-wrap mt-24">
+          <table>
+            <thead><tr><th>Tên</th><th>Email</th><th>Vai trò</th><th>Số dư</th><th>SĐT</th><th>Telegram</th></tr></thead>
+            <tbody id="usersBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

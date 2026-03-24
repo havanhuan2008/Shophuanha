@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script defer src="assets/js/api.js"></script>
+  <script defer src="assets/js/layout.js"></script>
+  <script defer src="assets/js/orders.js"></script>
+</head>
+<body data-page="don-hang-da-mua">
+  <div class="shell">
+    <section class="panel">
+      <div class="panel-line"></div>
+      <div class="section-badge"><i class="fa-solid fa-bag-shopping"></i> Đơn hàng đã mua</div>
+      <h1 class="hero-title">Theo dõi <span>đơn hàng</span> và key đã giao</h1>
+      <p class="section-text">Khi admin giao key bằng bot Telegram hoặc trong admin panel, dữ liệu sẽ hiện tại đây cho người dùng.</p>
+      <div class="table-wrap mt-24">
+        <table>
+          <thead><tr><th>Mã đơn</th><th>Sản phẩm</th><th>Gói key</th><th>Giá</th><th>Trạng thái</th><th>Ngày mua</th><th>Key</th><th>Thời hạn</th></tr></thead>
+          <tbody id="ordersBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

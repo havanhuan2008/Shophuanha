@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script defer src="assets/js/api.js"></script>
+  <script defer src="assets/js/layout.js"></script>
+  <script defer src="assets/js/topup.js"></script>
+</head>
+<body data-page="nap-tien">
+  <div class="shell">
+    <section class="topup-panel">
+      <div class="panel-line"></div>
+      <div class="section-badge"><i class="fa-solid fa-wallet"></i> Nạp tiền</div>
+      <h1 class="hero-title">Nạp <span>Bank / Thẻ</span></h1>
+      <p class="section-text">Khi ấn vào mục Nạp tiền trong menu trái, dropdown sẽ hiện Nạp Bank và Nạp Thẻ. Hai chức năng này nằm cùng một trang và đổi tab ngay lập tức.</p>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab-btn="bank">Nạp Bank</button>
+        <button class="tab-btn" data-tab-btn="card">Nạp Thẻ</button>
+      </div>
+      <div class="tab-panel active" data-tab-panel="bank">
+        <div class="two-col mt-24">
+          <div>
+            <form id="bankForm">
+              <div class="form-grid">
+                <div class="field"><label>Số tiền cần nạp</label><input type="number" min="1000" name="amount" required></div>
+                <div class="field"><label>Tên tài khoản chuyển</label><input type="text" name="accountName" required></div>
+              </div>
+              <div class="field mt-18"><label>Nội dung / ghi chú</label><textarea name="content" placeholder="Ví dụ: nap so du cho tai khoan abc"></textarea></div>
+              <div class="mt-24"><button class="btn" type="submit"><i class="fa-solid fa-paper-plane"></i> Gửi yêu cầu nạp bank</button></div>
+            </form>
+          </div>
+          <div id="bankInfo"></div>
+        </div>
+      </div>
+      <div class="tab-panel" data-tab-panel="card">
+        <form id="cardForm" class="mt-24">
+          <div class="form-grid">
+            <div class="field"><label>Nhà mạng</label><select name="telco" required><option value="VIETTEL">Viettel</option><option value="MOBIFONE">Mobifone</option><option value="VINAPHONE">Vinaphone</option></select></div>
+            <div class="field"><label>Mệnh giá</label><select name="amount" required><option value="10000">10.000đ</option><option value="20000">20.000đ</option><option value="50000">50.000đ</option><option value="100000">100.000đ</option><option value="200000">200.000đ</option><option value="500000">500.000đ</option></select></div>
+            <div class="field"><label>Số serial</label><input type="text" name="serial" required></div>
+            <div class="field"><label>Mã thẻ</label><input type="text" name="pin" required></div>
+          </div>
+          <div class="notice mt-24">Thẻ sẽ được gửi tới API đổi thẻ qua Partner ID, Partner Key và Callback URL cấu hình trong biến môi trường của server.</div>
+          <div class="mt-24"><button class="btn" type="submit"><i class="fa-solid fa-credit-card"></i> Gửi thẻ để xử lý</button></div>
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
