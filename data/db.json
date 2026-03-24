@@ -1,0 +1,186 @@
+{
+  "users": [
+    {
+      "id": "de6ccf79-a4f2-4d0c-b5f1-f5128d84a12e",
+      "name": "Admin Tổng",
+      "email": "admin@example.com",
+      "passwordHash": "9a4aabf0e5cf71cae2cea646613ce7e2a5919fa758e56819704be25a3a2c1f0b",
+      "role": "admin",
+      "balance": 0,
+      "phone": "",
+      "telegram": "",
+      "createdAt": "2026-03-23T17:38:43.676Z"
+    },
+    {
+      "id": "b42ff9cd-c0c4-4dfa-af2f-1047fb29b128",
+      "name": "Test User",
+      "email": "test@example.com",
+      "passwordHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "role": "user",
+      "balance": 0,
+      "phone": "",
+      "telegram": "",
+      "createdAt": "2026-03-23T17:39:15.732Z"
+    },
+    {
+      "id": "4b5e2a50-6071-4b45-8573-a8938325ea51",
+      "name": "Test User 2",
+      "email": "test2@example.com",
+      "passwordHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "role": "user",
+      "balance": 0,
+      "phone": "",
+      "telegram": "",
+      "createdAt": "2026-03-23T17:39:43.264Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "c2bec956b9c4167eb0f32ebf571250882ba50ec42b1bec2d2e0c22c803c801d3",
+      "userId": "b42ff9cd-c0c4-4dfa-af2f-1047fb29b128",
+      "expiresAt": 1774892355733
+    },
+    {
+      "token": "a249da47d590c74a5dd00cfe5cbfa6c58c63c649456e5ba0be03e6f62b88a298",
+      "userId": "4b5e2a50-6071-4b45-8573-a8938325ea51",
+      "expiresAt": 1774892383266
+    },
+    {
+      "token": "fe0024b840486eb0b545cd50746d7464f9ab865ad71aab1aa85a92cffbd84161",
+      "userId": "4b5e2a50-6071-4b45-8573-a8938325ea51",
+      "expiresAt": 1774892392284
+    },
+    {
+      "token": "94cfe1dfaae81cd8cbe5ce1e5a9ba30e648c99bf919a2d923d076a8c3bd9cd14",
+      "userId": "de6ccf79-a4f2-4d0c-b5f1-f5128d84a12e",
+      "expiresAt": 1774892403779
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-premium-1",
+      "title": "Gói Premium Mobile Toolkit",
+      "category": "premium",
+      "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
+      "description": "Bộ công cụ số dành cho mobile creator, gồm tài liệu hướng dẫn, preset và quyền hỗ trợ ưu tiên.",
+      "stock": 18,
+      "plans": [
+        {
+          "id": "plan-1d",
+          "name": "Key 1 ngày",
+          "days": 1,
+          "price": 19000
+        },
+        {
+          "id": "plan-7d",
+          "name": "Key 7 ngày",
+          "days": 7,
+          "price": 79000
+        },
+        {
+          "id": "plan-30d",
+          "name": "Key 30 ngày",
+          "days": 30,
+          "price": 199000
+        }
+      ],
+      "createdAt": "2026-03-24T00:00:00.000Z",
+      "active": true
+    },
+    {
+      "id": "prod-premium-2",
+      "title": "Bộ Template Bán Hàng Pro",
+      "category": "premium",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "description": "Kho template landing page, banner và nội dung social cho shop sản phẩm số.",
+      "stock": 9,
+      "plans": [
+        {
+          "id": "plan-3d",
+          "name": "Key 3 ngày",
+          "days": 3,
+          "price": 49000
+        },
+        {
+          "id": "plan-15d",
+          "name": "Key 15 ngày",
+          "days": 15,
+          "price": 129000
+        },
+        {
+          "id": "plan-90d",
+          "name": "Key 90 ngày",
+          "days": 90,
+          "price": 349000
+        }
+      ],
+      "createdAt": "2026-03-24T00:00:00.000Z",
+      "active": true
+    },
+    {
+      "id": "prod-premium-3",
+      "title": "Gói Support VIP Creator",
+      "category": "premium",
+      "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+      "description": "Quyền truy cập nhóm hỗ trợ riêng, tài liệu premium và cập nhật phiên bản định kỳ.",
+      "stock": 24,
+      "plans": [
+        {
+          "id": "plan-1m",
+          "name": "Key 30 ngày",
+          "days": 30,
+          "price": 299000
+        },
+        {
+          "id": "plan-3m",
+          "name": "Key 90 ngày",
+          "days": 90,
+          "price": 699000
+        }
+      ],
+      "createdAt": "2026-03-24T00:00:00.000Z",
+      "active": true
+    },
+    {
+      "id": "prod-free-1",
+      "title": "Bộ tài nguyên miễn phí cho người mới",
+      "category": "free",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+      "description": "Tài liệu onboarding, checklist khởi tạo shop và mẫu nội dung miễn phí.",
+      "stock": 999,
+      "plans": [],
+      "freeLink": "https://example.com/free-resource-1",
+      "createdAt": "2026-03-24T00:00:00.000Z",
+      "active": true
+    },
+    {
+      "id": "prod-free-2",
+      "title": "Preset ảnh quảng bá miễn phí",
+      "category": "free",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      "description": "Gói preset cơ bản dành cho bài đăng bán hàng và hình ảnh social.",
+      "stock": 999,
+      "plans": [],
+      "freeLink": "https://example.com/free-resource-2",
+      "createdAt": "2026-03-24T00:00:00.000Z",
+      "active": true
+    }
+  ],
+  "orders": [],
+  "topups": [
+    {
+      "id": "BANK-1774287594478",
+      "userId": "4b5e2a50-6071-4b45-8573-a8938325ea51",
+      "type": "bank",
+      "amount": 50000,
+      "accountName": "TEST USER 2",
+      "content": "nap thu",
+      "status": "pending",
+      "createdAt": "2026-03-23T17:39:54.478Z",
+      "providerResponse": null
+    }
+  ],
+  "settings": {
+    "shopName": "Thanh Shop Huấn Hà"
+  }
+}
