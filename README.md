@@ -66,3 +66,7 @@ Ví dụ payload JSON:
 Lấy từ env:
 - `ADMIN_EMAIL`
 - `ADMIN_PASSWORD`
+
+
+## Render build note
+This package intentionally excludes package-lock.json to avoid private registry lockfile issues during deployment.
