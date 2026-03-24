@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: thanh-shop-huan-ha
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: APP_URL
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SHOP_NAME
+        value: Thanh Shop Huấn Hà
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_ADMIN_CHAT_ID
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET
+        sync: false
+      - key: CARD_PARTNER_ID
+        sync: false
+      - key: CARD_PARTNER_KEY
+        sync: false
+      - key: CARD_API_URL
+        sync: false
+      - key: CARD_CALLBACK_URL
+        sync: false
+      - key: BANK_ACCOUNT_NAME
+        sync: false
+      - key: BANK_ACCOUNT_NUMBER
+        sync: false
+      - key: BANK_BANK_NAME
+        sync: false
+      - key: BANK_QR_IMAGE
+        sync: false
